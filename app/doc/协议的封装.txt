@@ -1,0 +1,27 @@
+①必须继承Element
+如：获取当前销售期请求
+public class CurrentIssueElement extends Element
+②处理Element的两个方法
+需要结合接口文档，获取当前销售期请求
+// <lotteryid>118</lotteryid>
+private Leaf lotteryid = new Leaf("lotteryid");
+// <issues>1</issues>
+private Leaf issues = new Leaf("issues", "1");
+
+@Override
+public void serializerElement(XmlSerializer serializer) {
+	try {
+			serializer.startTag(null, "element");
+			lotteryid.serializerLeaf(serializer);
+			issues.serializerLeaf(serializer);
+			serializer.endTag(null, "element");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Override
+	public String getTransactionType() {
+		return "12002";
+	}
