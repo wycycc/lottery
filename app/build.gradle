@@ -25,4 +25,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile files('libs/commons-codec.jar')
     compile files('libs/commons-lang3-3.0-beta.jar')
+    compile files('libs/apache-httpcomponents-httpclient.jar')
+    compile files('libs/apache-httpcomponents-httpcore.jar')
+    compile files('libs/apache-httpcomponents-httpmime.jar')
 }

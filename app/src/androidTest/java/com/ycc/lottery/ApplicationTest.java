@@ -5,6 +5,7 @@ import android.test.ApplicationTestCase;
 import android.util.Log;
 import android.util.Xml;
 
+import com.ycc.lottery.net.NetUtil;
 import com.ycc.lottery.net.protocal.Message;
 import com.ycc.lottery.net.protocal.element.CurrentIssueElement;
 
@@ -43,5 +44,9 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
         String xml = message.getXml(ele);
         Log.i(TAG,xml);
+    }
+
+    public void testNetType(){
+        NetUtil.checkNet(getContext());
     }
 }
