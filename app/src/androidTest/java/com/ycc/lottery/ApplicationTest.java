@@ -65,16 +65,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 
     public void testUserLogin() {
-        // UserEngineImpl impl=new UserEngineImpl();
-        // UserEngineImpl1
-        // User user=new User();
-        // user.setUsername("13200000000");
-        // user.setPassword("0000000");
-        // Message login = impl.login(user);
-        // Log.i(TAG, login.getBody().getOelement().getErrorcode());
-
         UserEngine engine = BeanFactory.getImpl(UserEngine.class);
-
         User user = new User();
         user.setUsername("13200000000");
         user.setPassword("0000000");

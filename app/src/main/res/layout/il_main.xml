@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ycc.lottery.MainActivity">
+    <!-- 界面分为三部分，标题：3钟变化；底部导航：2种变化 -->
+
+    <include
+        android:id="@+id/ii_title"
+       android:layout_alignParentTop="true"
+        layout="@layout/il_title" />
+
+    <include
+        android:id="@+id/ii_bottom"
+        android:layout_alignParentBottom="true"
+        layout="@layout/il_bottom" />
+
+    <RelativeLayout
+        android:id="@+id/ii_middle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ii_bottom"
+        android:layout_below="@id/ii_title"
+        >
+    </RelativeLayout>
+</RelativeLayout>
