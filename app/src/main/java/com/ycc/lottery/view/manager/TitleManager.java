@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ycc.lottery.R;
+import com.ycc.lottery.view.SecondUI;
 
 /**
  * 管理标题容器的工具
@@ -74,7 +75,7 @@ public class TitleManager {
                 System.out.println("login");
 
 //				SecondUI secondUI = new SecondUI(MiddleManager.getInstance().getContext());
-                //MiddleManager.getInstance().changeUI(SecondUI.class);//changeUI需要修改，不能传递对象，但是明确目标
+                MiddleManager.getInstance().changeUI(SecondUI.class);//changeUI需要修改，不能传递对象，但是明确目标
             }
         });
 

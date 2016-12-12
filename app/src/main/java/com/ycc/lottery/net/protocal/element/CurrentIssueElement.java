@@ -15,6 +15,29 @@ public class CurrentIssueElement extends Element {
     // <issues>1</issues>
     private Leaf issues = new Leaf("issues", "1");
 
+    /******************服务器回复**********************/
+    private String issue;
+    private String lasttime;
+
+
+    public String getIssue() {
+        return issue;
+    }
+
+    public void setIssue(String issue) {
+        this.issue = issue;
+    }
+
+    public String getLasttime() {
+        return lasttime;
+    }
+
+    public void setLasttime(String lasttime) {
+        this.lasttime = lasttime;
+    }
+
+    /*********************************************/
+
     @Override
     public void serializerElement(XmlSerializer serializer) {
         try {
