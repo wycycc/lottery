@@ -9,14 +9,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ycc.lottery.ConstantValue;
 import com.ycc.lottery.R;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Observable;
+import java.util.Observer;
 
 
 /**
  * 控制底部导航容器
  * Created by Administrator on 2016/12/9.
  */
-public class BottomManager {
+public class BottomManager implements Observer {
     protected static final String TAG = "BottomManager";
     /******************* 第一步：管理对象的创建(单例模式) ***************************************************/
     // 创建一个静态实例
@@ -79,6 +85,17 @@ public class BottomManager {
 
             public void onClick(View v) {
                 Log.i(TAG, "点击清空按钮");
+                // 获取到当前正在展示的界面
+                BaseUI current = MiddleManager.getInstance().getCurrentUI();
+
+				/*
+				 * if (current instanceof PlaySSQ) { ((PlaySSQ) current).clear(); } if (current instanceof Play3D) { ((Play3D) current).clear(); } if (current instanceof PlayQLC) {
+				 * ((PlayQLC) current).clear(); }
+				 */
+
+                if (current instanceof PlayGame) {
+                    ((PlayGame) current).clear();
+                }
 
             }
         });
@@ -87,6 +104,10 @@ public class BottomManager {
 
             public void onClick(View v) {
                 Log.i(TAG, "点击选好按钮");
+                BaseUI current = MiddleManager.getInstance().getCurrentUI();
+                if (current instanceof PlayGame) {
+                    ((PlayGame) current).done();
+                }
 
             }
         });
@@ -134,6 +155,31 @@ public class BottomManager {
     public void changeGameBottomNotice(String notice) {
         playBottomNotice.setText(notice);
     }
+
     /*********************************************************************************************/
+
+    @Override
+    public void update(Observable observable, Object data) {
+
+        if (data != null && StringUtils.isNumeric(data.toString())) {
+            int id = Integer.parseInt(data.toString());
+            switch (id) {
+                case ConstantValue.VIEW_FIRST:
+                case ConstantValue.VIEW_HALL:
+                case ConstantValue.VIEW_LOGIN:
+                    showCommonBottom();
+                    break;
+                case ConstantValue.VIEW_SECOND:
+                case ConstantValue.VIEW_SSQ:
+                    showGameBottom();
+                    break;
+                case ConstantValue.VIEW_SHOPPING:
+                case ConstantValue.VIEW_PREBET:
+                    changeBottomVisiblity(View.GONE);
+                    break;
+            }
+        }
+
+    }
 
 }

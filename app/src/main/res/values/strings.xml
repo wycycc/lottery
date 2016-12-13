@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, Lotteryhm28Activity!</string>
-    <string name="app_name">Lotteryhm28</string>
+    <string name="hello">Hello World, ycc!</string>
+    <string name="app_name">手机彩票</string>
     <string name="is_exit">退出</string>
     <string name="is_positive">确定</string>
     <string name="is_negative">取消</string>
@@ -50,7 +50,8 @@
     <string name="is_login_notice1">温馨提示：彩民村网站用户可以直接登录</string>
     <string name="is_login_notice11">温馨提示：彩民村网站用户可以直接</string>
     <string name="is_login_notice2"><u>登录</u></string>
-    <string name="is_forget_password_notice">您遗忘登录密码时可登录彩民村网站（www.caimincun.com）找回，或致电彩民村客服热线索回密码！</string>
+    <string name="is_forget_password_notice">您遗忘登录密码时可登录彩民村网站（www.caimincun.com）找回，或致电彩民村客服热线索回密码！
+</string>
     <string name="is_username">用户名:</string>
     <string name="is_regist_password">密     码:</string>
     <string name="is_auto_login">自动登录</string>

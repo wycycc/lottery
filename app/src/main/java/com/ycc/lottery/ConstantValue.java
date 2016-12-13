@@ -33,7 +33,7 @@ public interface ConstantValue {
     /**
      * 服务器地址
      */
-    String LOTTERY_URI = "http://10.0.2.2:8080/ZCWService/Entrance";// 10.0.2.2模拟器如果需要跟PC机通信127.0.0.1
+    String LOTTERY_URI = "http://10.3.104.24:8088/zwcservice/Entrance";// 10.0.2.2模拟器如果需要跟PC机通信127.0.0.1
     // String LOTTERY_URI = "http://192.168.1.100:8080/ZCWService/Entrance";// 10.0.2.2模拟器如果需要跟PC机通信127.0.0.1
 
 

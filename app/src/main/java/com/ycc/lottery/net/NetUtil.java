@@ -2,12 +2,10 @@ package com.ycc.lottery.net;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Proxy;
 import android.net.Uri;
-
-import com.ycc.lottery.GlobalParams;
 
 /**
  * Created by Administrator on 2016/12/8.
@@ -46,13 +44,19 @@ public class NetUtil {
         // 操作联系人类似
         ContentResolver resolver = context.getContentResolver();
         // 判断是哪个APN被选中了
-        Cursor cursor = resolver.query(PREFERRED_APN_URI, null, null, null, null);
+       // 获取当前连接代理地址和端口号代码如下：
+        String proxy= Proxy.getDefaultHost();
+        //int port = Proxy.getDefaultPort() == -1 "80":Proxy.getDefaultPort();
+        /**if(proxy==null){
+            Cursor cursor = resolver.query(PREFERRED_APN_URI, null, null, null, null);
 
-        if(cursor!=null&&cursor.moveToFirst())
-        {
-            GlobalParams.PROXY=cursor.getString(cursor.getColumnIndex("proxy"));
-            GlobalParams.PORT=cursor.getInt(cursor.getColumnIndex("port"));
-        }
+            if(cursor!=null&&cursor.moveToFirst())
+            {
+                GlobalParams.PROXY=cursor.getString(cursor.getColumnIndex("proxy"));
+                GlobalParams.PORT=cursor.getInt(cursor.getColumnIndex("port"));
+            }
+        }*/
+
 
 
     }
